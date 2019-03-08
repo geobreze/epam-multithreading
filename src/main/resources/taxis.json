@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "coordinate": 767,
+        "free": true
+    },
+    {
+        "id": 2,
+        "coordinate": -790,
+        "free": true
+    },
+    {
+        "id": 3,
+        "coordinate": 320,
+        "free": true
+    },
+    {
+        "id": 4,
+        "coordinate": -50,
+        "free": true
+    },
+    {
+        "id": 5,
+        "coordinate": -52,
+        "free": true
+    },
+    {
+        "id": 6,
+        "coordinate": -116,
+        "free": true
+    },
+    {
+        "id": 7,
+        "coordinate": -160,
+        "free": true
+    },
+    {
+        "id": 8,
+        "coordinate": 486,
+        "free": true
+    },
+    {
+        "id": 9,
+        "coordinate": -110,
+        "free": true
+    },
+    {
+        "id": 10,
+        "coordinate": 100,
+        "free": true
+    },
+    {
+        "id": 11,
+        "coordinate": -946,
+        "free": true
+    },
+    {
+        "id": 12,
+        "coordinate": -613,
+        "free": true
+    },
+    {
+        "id": 13,
+        "coordinate": 358,
+        "free": true
+    },
+    {
+        "id": 14,
+        "coordinate": 791,
+        "free": true
+    },
+    {
+        "id": 15,
+        "coordinate": 663,
+        "free": true
+    },
+    {
+        "id": 16,
+        "coordinate": 91,
+        "free": true
+    },
+    {
+        "id": 17,
+        "coordinate": 970,
+        "free": true
+    },
+    {
+        "id": 18,
+        "coordinate": 419,
+        "free": true
+    },
+    {
+        "id": 19,
+        "coordinate": 828,
+        "free": true
+    },
+    {
+        "id": 20,
+        "coordinate": 451,
+        "free": true
+    },
+    {
+        "id": 21,
+        "coordinate": 309,
+        "free": true
+    },
+    {
+        "id": 22,
+        "coordinate": 540,
+        "free": true
+    },
+    {
+        "id": 23,
+        "coordinate": 900,
+        "free": true
+    },
+    {
+        "id": 24,
+        "coordinate": 786,
+        "free": true
+    },
+    {
+        "id": 25,
+        "coordinate": 962,
+        "free": true
+    },
+    {
+        "id": 26,
+        "coordinate": -716,
+        "free": true
+    },
+    {
+        "id": 27,
+        "coordinate": -660,
+        "free": true
+    },
+    {
+        "id": 28,
+        "coordinate": 159,
+        "free": true
+    },
+    {
+        "id": 29,
+        "coordinate": 786,
+        "free": true
+    },
+    {
+        "id": 30,
+        "coordinate": 411,
+        "free": true
+    }
+]

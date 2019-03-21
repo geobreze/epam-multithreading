@@ -1,6 +1,7 @@
 package com.epam.multithreading.requestor;
 
 import com.epam.multithreading.entity.Passenger;
+import com.epam.multithreading.entity.Taxi;
 import com.epam.multithreading.logic.UberPark;
 
 public class AsyncRequest implements Runnable {
@@ -14,6 +15,7 @@ public class AsyncRequest implements Runnable {
 
     @Override
     public void run() {
-        park.processRequest(passenger);
+        Taxi taxi = park.askForTaxi(passenger);
+        taxi.ride(passenger);
     }
 }

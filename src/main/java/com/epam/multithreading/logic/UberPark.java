@@ -5,22 +5,20 @@ import com.epam.multithreading.entity.Taxi;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-
-// TODO:sinleton
 public class UberPark {
     private static final Logger LOGGER = LogManager.getLogger(UberPark.class);
     private static final Lock lock = new ReentrantLock();
     private static AtomicReference<UberPark> instance = new AtomicReference<>();
     private final OptimalTaxiCalculator optimalTaxiCalculator = new OptimalTaxiCalculator();
-    private final TaxiLogic taxiLogic = new TaxiLogic(lock);
-    private List<Taxi> taxis;
-    private Semaphore semaphore;
+    private List<Taxi> taxis = new ArrayList<>();
+    private Semaphore semaphore = new Semaphore(0);
 
     private UberPark() {
     }
@@ -45,18 +43,20 @@ public class UberPark {
         return park;
     }
 
-    public void processRequest(Passenger passenger) {
+    public Taxi askForTaxi(Passenger passenger) {
+        Taxi optimalTaxi = taxis.get(0);
         try {
             semaphore.acquire();
             int destination = passenger.getDestination();
+            lock.lock();
             List<Taxi> freeTaxis = optimalTaxiCalculator.findFree(taxis);
-            Taxi optimalTaxi = optimalTaxiCalculator.calculateOptimal(freeTaxis, destination);
-            taxiLogic.transportPassenger(optimalTaxi, passenger, destination);
+            optimalTaxi = optimalTaxiCalculator.calculateOptimal(freeTaxis, destination);
+            lock.unlock();
         } catch (InterruptedException e) {
             LOGGER.error(e);
         } finally {
             semaphore.release();
         }
+        return optimalTaxi;
     }
-
 }

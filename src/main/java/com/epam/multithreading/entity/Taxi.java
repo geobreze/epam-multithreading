@@ -1,8 +1,12 @@
 package com.epam.multithreading.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
 
 public class Taxi {
+    private static final Logger LOGGER = LogManager.getLogger(Taxi.class);
     private final Integer id;
     private int coordinate;
     private boolean free;
@@ -35,6 +39,18 @@ public class Taxi {
 
     public Integer getId() {
         return id;
+    }
+
+    public void ride(Passenger passenger) {
+        if(!free) {
+            LOGGER.error("aaa");
+        }
+        setFree(false);
+        int destination = passenger.getDestination();
+        LOGGER.info("{} started a ride with {} to {}", this, passenger, destination);
+        passenger.setCoordinate(destination);
+        setCoordinate(destination);
+        setFree(true);
     }
 
     @Override

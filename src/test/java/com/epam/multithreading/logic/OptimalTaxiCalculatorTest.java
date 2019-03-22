@@ -2,13 +2,12 @@ package com.epam.multithreading.logic;
 
 import com.epam.multithreading.entity.Taxi;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.NoSuchElementException;
 
 public class OptimalTaxiCalculatorTest {
     private static final List<Taxi> NO_FREE_TAXIS = Arrays.asList(
@@ -51,5 +50,12 @@ public class OptimalTaxiCalculatorTest {
         Taxi expectedTaxi = THREE_FREE_TAXIS.get(3);
 
         Assert.assertEquals(optimalTaxi, expectedTaxi);
+    }
+
+    @Test(expectedExceptions = NoSuchElementException.class)
+    public void calculateOptimalShouldThrowNoSuchElementExceptionWhenEmptyListSupplied() {
+        int destination = 10;
+        List<Taxi> emptyList = Collections.emptyList();
+        calculator.calculateOptimal(emptyList, destination);
     }
 }

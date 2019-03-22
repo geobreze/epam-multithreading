@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "coordinate": -489,
+        "destination": 66
+    },
+    {
+        "id": 2,
+        "coordinate": -855,
+        "destination": -489
+    },
+    {
+        "id": 3,
+        "coordinate": -218,
+        "destination": -973
+    },
+    {
+        "id": 4,
+        "coordinate": -167,
+        "destination": 27
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "coordinate": -916,
+        "free": true
+    },
+    {
+        "id": 2,
+        "coordinate": -806,
+        "free": true
+    },
+    {
+        "id": 3,
+        "coordinate": -552,
+        "free": true
+    },
+    {
+        "id": 4,
+        "coordinate": -436,
+        "free": true
+    }
+]

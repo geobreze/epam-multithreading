@@ -12,11 +12,10 @@ public class OptimalTaxiCalculator {
     }
 
     public List<Taxi> findFree(List<Taxi> taxis) {
-        List<Taxi> freeTaxis = taxis
+        return taxis
                 .stream()
                 .filter(Taxi::isFree)
                 .collect(Collectors.toList());
-        return freeTaxis;
     }
 
     public Taxi calculateOptimal(List<Taxi> taxis, int destination) {

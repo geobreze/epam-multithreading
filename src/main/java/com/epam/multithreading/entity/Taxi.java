@@ -21,6 +21,11 @@ public class Taxi {
         this.coordinate = coordinate;
     }
 
+    public Taxi(Integer id, int coordinate, boolean free) {
+        this(id, coordinate);
+        this.free = free;
+    }
+
     public int getCoordinate() {
         return coordinate;
     }

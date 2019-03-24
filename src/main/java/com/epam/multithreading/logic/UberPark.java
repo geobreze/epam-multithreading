@@ -51,10 +51,10 @@ public class UberPark {
             lock.lock();
             List<Taxi> freeTaxis = optimalTaxiCalculator.findFree(taxis);
             optimalTaxi = optimalTaxiCalculator.calculateOptimal(freeTaxis, destination);
-            lock.unlock();
         } catch (InterruptedException e) {
             LOGGER.error(e);
         } finally {
+            lock.unlock();
             semaphore.release();
         }
         return optimalTaxi;
